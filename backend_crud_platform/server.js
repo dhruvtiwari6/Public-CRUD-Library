@@ -2,11 +2,11 @@ import express from "express";
 import session from "express-session";  // Change this to express-session
 import passport from "passport";
 import dotenv from "dotenv";
-import "./passport/googleStrategy.js";
-import "./db/connection.js";
-import authRoutes from "./routes/authRoutes.js";
-import crudRoutes from "./routes/crudRoutes.js";
-import { sequelize } from "./db/connection.js";
+import "./src/passport/googleStrategy.js";
+import "./src/db/connection.js";
+import authRoutes from "./src/routes/authRoutes.js";
+import crudRoutes from "./src/routes/crudRoutes.js";
+import { sequelize } from "./src/db/connection.js";
 import cors from 'cors';
 
 dotenv.config({
