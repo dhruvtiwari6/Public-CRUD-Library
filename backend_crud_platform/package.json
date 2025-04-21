@@ -1,9 +1,9 @@
 {
   "name": "backend_crud_platform",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon -r dotenv/config --experimental-json-modules server.js"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules index.js"
   },
   "keywords": [],
   "author": "",
