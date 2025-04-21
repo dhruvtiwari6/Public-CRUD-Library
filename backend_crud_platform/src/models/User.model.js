@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db/connection.js";
+import { Todo } from "./Todo.model.js";  // Make sure Todo model is imported
 
 export const User = sequelize.define("User", {
   googleId: {
@@ -26,3 +27,7 @@ export const User = sequelize.define("User", {
     defaultValue: false,
   },
 });
+
+// User has many Todos
+User.hasMany(Todo, { foreignKey: "googleId", sourceKey: "googleId" });
+Todo.belongsTo(User, { foreignKey: "googleId", targetKey: "googleId" });

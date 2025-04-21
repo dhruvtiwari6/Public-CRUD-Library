@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                        // More modern target (safe for ESM)
+    "module": "ESNext",                        // Keep as ESNext for modern ESM
+    "moduleResolution": "node",                // Important: resolves modules like Node.js
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist/types",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true                             // Optional: enforces best practices
+  },
+  "include": ["src/**/*"]
+}
