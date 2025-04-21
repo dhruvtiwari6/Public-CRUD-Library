@@ -32,8 +32,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('/', (req, res) => {
+  res.send('Backend is working!');
+});
+
 app.use("/auth", authRoutes);
 app.use("/api", crudRoutes);
+
+
 
 sequelize
   .sync({ alter: true }) 
