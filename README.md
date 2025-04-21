@@ -27,7 +27,7 @@ npm install crublibrarydhruv
 
 - create(): Create a new item.
 
-- get(): Get an item by its ID.
+- get(): Get an item.
 
 - update(): Update an item by ID.
 
