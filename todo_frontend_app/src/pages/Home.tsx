@@ -15,7 +15,7 @@ function App() {
   const [newTodo, setNewTodo] = useState<string>('');
   const [credits, setCredits] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [apiKey, setApiKey] = useState<string | null>(import.meta.env.VITE_API_KEY || null);
+  const [apiKey, setApiKey] = useState<string | null>(null); // use (import.meta.env.VITE_API_KEY || null) after getting api key
   const [editingTodo, setEditingTodo] = useState<Todo | null>(null);
   
   // Loading states
@@ -44,6 +44,8 @@ function App() {
 
   const fetchTodos = async () => {
     if (!apiKey) return;
+
+    console.log("apiKey : ", apiKey);
 
     setIsLoading(true);
     sayHelloFromLibrary();
@@ -78,7 +80,7 @@ function App() {
   }, [apiKey]);
 
   const handleLogin = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = 'https://crub-library-backend.onrender.com/auth/google/callback';
   };
 
   const handleCreate = async () => {
