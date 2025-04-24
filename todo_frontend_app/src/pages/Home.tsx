@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import Notification from '../components/Notification';
 import Loader from '../components/Loader';
 import Crublibrary, { sayHelloFromLibrary } from 'crublibrarydhruv';
@@ -14,8 +14,8 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>('');
   const [credits, setCredits] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [apiKey, setApiKey] = useState<string | null>(null); // use (import.meta.env.VITE_API_KEY || null) after getting api key
+  const [error,] = useState<string | null>(null);
+  const [apiKey,] = useState<string | null>(null); // use (import.meta.env.VITE_API_KEY || null) after getting api key
   const [editingTodo, setEditingTodo] = useState<Todo | null>(null);
   
   // Loading states
