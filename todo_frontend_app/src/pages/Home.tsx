@@ -15,7 +15,7 @@ function App() {
   const [newTodo, setNewTodo] = useState<string>('');
   const [credits, setCredits] = useState<number | null>(null);
   const [error,] = useState<string | null>(null);
-  const [apiKey,] = useState<string | null>(null); // use (import.meta.env.VITE_API_KEY || null) after getting api key
+  const [apiKey,] = useState<string | null>(import.meta.env.VITE_API_KEY || null); // use (import.meta.env.VITE_API_KEY || null) after getting api key
   const [editingTodo, setEditingTodo] = useState<Todo | null>(null);
   
   // Loading states
