@@ -169,14 +169,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-100 py-6 px-3 flex items-center justify-center">
       <ToastContainer />
+      
       {apiKey && credits === 0 && (
-        <div className="fixed top-4 right-4 bg-white shadow-lg rounded-lg p-3 max-w-xs animate-fade-in z-10 border border-blue-100">
+        <div className="fixed top-4 right-4 bg-white shadow-lg rounded-lg p-3 w-[90%] sm:max-w-xs animate-fade-in z-10 border border-blue-100">
           <div className="flex flex-col">
-            <p className="text-sm font-medium text-gray-700 mb-2">
-              Please recharge my credits
-            </p>
+            <p className="text-sm font-medium text-gray-700 mb-2">Please recharge my credits</p>
             <button
               onClick={handleRechargeRequest}
               className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 py-1 rounded transition-colors duration-200"
@@ -186,11 +185,12 @@ function App() {
           </div>
         </div>
       )}
-      <div className="w-full max-w-xl bg-white shadow-xl rounded-2xl p-6">
-        <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">📋 Todo App</h1>
-
+  
+      <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-5 sm:p-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-blue-600">📋 Todo App</h1>
+  
         {error && <Notification message={error} type="error" />}
-
+  
         {!apiKey ? (
           <div className="flex justify-center">
             <button
@@ -211,12 +211,10 @@ function App() {
                 {todos.map((todo) => (
                   <li
                     key={todo.txHash}
-                    className="flex flex-col md:flex-row justify-between items-start md:items-center bg-gray-100 p-3 rounded-lg shadow-sm gap-2"
+                    className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-100 p-3 rounded-lg shadow-sm gap-2"
                   >
-                    <div className="flex flex-col">
-                      <span className="text-gray-800">{todo.value}</span>
-                    </div>
-                    <div className="flex gap-2 mt-2 md:mt-0 min-w-[60px] justify-end">
+                    <div className="text-gray-800">{todo.value}</div>
+                    <div className="flex gap-3 mt-2 sm:mt-0 justify-end">
                       {loadingTodoId === todo.txHash ? (
                         <Loader size="small" />
                       ) : (
@@ -245,14 +243,14 @@ function App() {
                 ))}
               </ul>
             )}
-
-            <div className="flex gap-3 mb-4">
+  
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <input
                 type="text"
                 value={newTodo}
                 onChange={(e) => setNewTodo(e.target.value)}
                 placeholder="Enter new todo"
-                className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 disabled={isLoading || loadingTodoId !== null}
               />
               <button
@@ -263,7 +261,7 @@ function App() {
                 {isLoading ? <Loader size="small" color="text-white" /> : editingTodo ? 'Update' : 'Add'}
               </button>
             </div>
-
+  
             <p className="text-sm text-gray-600 text-right">
               Credits remaining: <span className="font-semibold text-blue-600">{credits}</span>
             </p>
@@ -271,7 +269,7 @@ function App() {
         )}
       </div>
     </div>
-  );
+  );  
 }
 
 export default App;
